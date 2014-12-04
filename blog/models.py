@@ -12,12 +12,14 @@ class Step(models.Model):
 class Blog(models.Model):
     title = models.CharField(max_length = 200,blank = False)
     author = models.CharField(max_length = 100,blank = False)
-    datetime = models.DateTimeField(auto_now = True)
+    datetime = models.DateTimeField()
     helpful = models.IntegerField()
     unhelpful = models.IntegerField()
     step = models.ForeignKey(Step)
+    category = models.CharField(max_length = 100,blank = False)
     
     def __unicode__(self):
         return self.title
-    
+
+
 

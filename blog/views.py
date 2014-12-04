@@ -5,3 +5,6 @@ def show_blog(request,blog_id):
     blog = Blog.objects.get(id = blog_id)
     print blog.title
     return render_to_response('blog.html',{'blog':blog})
+
+
+    
